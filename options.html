@@ -1,0 +1,236 @@
+﻿<html>
+    
+    <head>
+        
+        <meta charset="utf-8"/>
+
+<!--
+/************************************************************************/
+/*                                                                      */
+/*      Search Site WE - Generic WebExtension - Options Page            */
+/*                                                                      */
+/*      HTML and CSS for Options Page                                   */
+/*                                                                      */
+/*      Last Edit - 09 Sep 2017                                         */
+/*                                                                      */
+/*      Copyright (C) 2016-2017 DW-dev                                  */
+/*                                                                      */
+/*      Distributed under the GNU General Public License version 2      */
+/*      See LICENCE.txt file and http://www.gnu.org/licenses/           */
+/*                                                                      */
+/************************************************************************/
+-->
+
+        <title>Search Site WE Options</title>
+        
+        <script src="options.js"></script>
+        
+        <style>
+            
+            /* Chrome - maximum height to avoid scrolling is 531px */
+            
+            #options
+            {
+                width: 337px;
+                padding: 5px;
+                border: 1px solid #808080;
+                font-family: "Segoe UI","Helvetica Neue",Ubuntu,Arial;
+                font-size: 12px;
+            }
+            
+            #options *
+            {
+                font-family: "Segoe UI","Helvetica Neue",Ubuntu,Arial;
+                font-size: 12px;
+            }
+            
+            #options-title
+            {
+                font-size: 16px;
+                margin-bottom: 3px;
+            }
+            
+            form
+            {
+                margin-bottom: 3px;
+            }
+            
+            fieldset > div
+            {
+                margin-bottom: 5px;
+            }
+            
+            fieldset > div:last-child
+            {
+                margin-bottom: 0px;
+            }
+            
+            fieldset input[type="checkbox"]
+            {
+                margin-right: 7px;
+                vertical-align: 0px;
+            }
+            
+            fieldset input[type="radio"]
+            {
+                margin-left: 4px;
+                margin-right: 7px;
+                vertical-align: 0px;
+            }
+            
+            #options-entiredomain
+            {
+                margin-left: 15px;
+            }
+            
+            fieldset label
+            {
+                vertical-align: 2px;
+            }
+            
+            fieldset table
+            {
+                margin-left: -1px;
+                margin-top: -1px;
+                border-collapse: collapse;
+            }
+            
+            fieldset td
+            {
+                padding-bottom: 5px;
+            }
+            
+            fieldset td:first-child
+            {
+                padding-right: 20px;
+            }
+            
+            fieldset table + div
+            {
+                margin-top: 4px;
+                padding-top: 11px;
+                border-top: 1px solid #C0C0C0;
+            }
+            
+            fieldset table + div label
+            {
+                margin-left: 4px;
+            }
+            
+            fieldset table + div input[type="text"]
+            {
+                width: 30px;
+                margin-left: 15px;
+                margin-top: -2px;
+                padding: 1px 3px 1px 3px;
+                text-align: center;
+                vertical-align: 2px;
+            }
+            
+            #options-save
+            {
+                margin-top: 10px;
+            }
+            
+            #options-save-button
+            {
+                width: 70px;
+                margin-left: 2px;
+                margin-bottom: 2px;
+                padding-bottom: 2px;
+                text-align: center;
+            }
+            
+            #options-save-status
+            {
+                margin-left: 15px;
+                color: #404040;
+                visibility: hidden;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="options">
+            
+            <div>
+                
+                <div id="options-title">Search Site WE Options</div>
+                
+                <form id="options-defaultdomain">
+                    <fieldset>
+                        <legend>&nbsp;Default Domain&nbsp;</legend>
+                        <div>
+                            <input id="options-subdomain" type="radio" name="domain" value="0"/><label for="options-subdomain">Subdomain</label>
+                            <input id="options-entiredomain" type="radio" name="domain" value="1"/><label for="options-entiredomain">Entire Domain</label>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <form id="options-searchengine">
+                    <fieldset>
+                        <legend>&nbsp;Search Engine&nbsp;</legend>
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tr>
+                                <td><input id="options-google-global" type="radio" name="engine" value="0"/><label for="options-google-global">Google (Global)</label></td>
+                                <td><input id="options-google-local" type="radio" name="engine" value="1"/><label for="options-google-local">Google (Local)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="options-bing-global" type="radio" name="engine" value="2"/><label for="options-bing-global">Bing Global</label></td>
+                                <td><input id="options-bing-local" type="radio" name="engine" value="3"/><label for="options-bing-local">Bing (Local)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="options-yahoo-global" type="radio" name="engine" value="4"/><label for="options-yahoo-global">Yahoo (Global)</label></td>
+                                <td><input id="options-yahoo-local" type="radio" name="engine" value="5"/><label for="options-yahoo-local">Yahoo (Local)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="options-ask-global" type="radio" name="engine" value="6"/><label for="options-ask-global">Ask (Global)</label></td>
+                                <td><input id="options-ask-local" type="radio" name="engine" value="7"/><label for="options-ask-local">Ask (Local)</label></td>
+                            </tr>
+                            <tr>
+                                <td><input id="options-duckduckgo-global" type="radio" name="engine" value="8"/><label for="options-duckduckgo-global">DuckDuckGo (Global)</label></td>
+                            </tr>
+                        </table>
+                        <div>
+                            <label for="options-countrycode">Local country code:</label><input id="options-countrycode" type="text"/>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <form>
+                    <fieldset>
+                        <legend>&nbsp;User Interface&nbsp;</legend>
+                        <div>
+                            <input id="options-showsubmenu" type="checkbox"/><label for="options-showsubmenu">Show add-on submenu on context menu</label>
+                        </div>
+                        <div>
+                            <input id="options-onlydefault" type="checkbox"/><label for="options-onlydefault">Only show default domain menu item</label>
+                        </div>
+                        <div>
+                            <input id="options-enclosequotes" type="checkbox"/><label for="options-enclosequotes">Enclose selected text in quotes</label>
+                        </div>
+                        <div>
+                            <input id="options-opennewtab" type="checkbox"/><label for="options-opennewtab">Open search results in new tab</label>
+                        </div>
+                    </fieldset>
+                </form>
+                
+                <div id="options-save">
+                    <button id="options-save-button">Save</button>
+                    <span id="options-save-status">Saved</span>
+                </div>
+                
+            </div>
+            
+        </div>
+
+    </body>
+    
+</html>

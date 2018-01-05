@@ -1,0 +1,231 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=590">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="popup.js"></script>
+<style>
+body {
+    display: flex;
+    margin: 0px;
+    font-family: Ubuntu,San Francisco,Lucida Grande,Trebuchet MS,Arial;
+    font-size: 14px;
+    background-color: #f7f6f5;
+}
+
+#popup {
+    font-family: Ubuntu,San Francisco,Lucida Grande,Trebuchet MS,Arial;
+    font-size: 14px;
+    margin: 0;
+}
+
+div {
+    margin: 0;
+}
+
+#wrap { width: 192px; height: 386px; padding: 0; overflow: hidden; display:none}
+#frame { width: 192px; height: 386px; border: 1px solid black; }
+#frame {
+    -ms-zoom: 0.75;
+    -moz-transform: scale(0.75);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.75);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.75);
+    -webkit-transform-origin: 0 0;
+}
+
+#popup-textbox
+{
+    height: 33px;
+    width: 500px;
+    top: 1px;
+    margin: 2px 0px 0px 3px;
+    padding: 5px 10px 1px 10px;
+    border: 1px solid #cccccc;
+    font-family: Segoe UI;
+    font-size: 14px;
+}
+
+button {
+    text-align: center;
+    font-family: Ubuntu,San Francisco,Lucida Grande,Trebuchet MS,Arial;
+    font-size: 14px;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #F3F3F3;
+    border: 1px solid #999999;
+    transition-duration: 0.1s;
+}
+
+button:hover {
+    background-color: #FBFBFB;
+}
+
+button::-moz-focus-inner
+{
+    border: 0px;
+    padding: 0px;
+}
+
+a{
+    color: #f7f6f5;
+    text-decoration: none;
+    font-family: Ubuntu,San Francisco,Lucida Grande,Trebuchet MS,Arial;
+    font-size: 12px;
+    padding: 0px 1px 0px 1px;
+    margin: 0;
+}
+
+a:visited {
+    color: #484848;
+}
+
+#popup-f {
+    position: relative;
+    margin: -1px 3px 0px 0px;
+    height: 35px;
+    width: 81px;
+    top: -2px;
+    background-color: #EEEEEE;
+    border: 1px solid #888888;
+    transition-duration: 0.1s;
+}
+
+#popup-f:hover {
+    background-color: #FBFBFB;
+}
+
+#popup-find {
+    margin: 1px 0px 0px 3px;
+    width: 52px;
+}
+
+#popup-entiredomain {
+    margin: 1px 0px 0px 0px;
+    width: 88px;
+}
+
+#popup-subdomain {
+    margin: 1px 0px 0px 0px;
+    width: 109px;
+}
+
+#popup-cl {
+    margin: 1px 0px 0px 0px;
+    width: 98px;
+}
+
+#popup-stack {
+    margin: 1px 0px 0px 0px;
+    width: 58px;
+}
+
+#popup-overflow {
+    margin: 1px 0px 0px 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 80px;
+}
+
+#popup-double {
+    margin: 1px 3px 0px 0px;
+    width: 95px;
+    float: right;
+}
+
+#popup-gmail {
+    margin: 0px 0px 0px 0px;
+    width: 59px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#popup-google {
+    margin: 0px 0px 0px 0px;
+    width: 68px;
+}
+
+#popup-youtube {
+    margin: 0px 3px 0px 0px;
+    width: 77px;
+}
+
+#popup-ali {
+    margin: 0px 0px 5px 3px;
+    width: 42px;
+}
+
+#popup-amazon {
+    margin: 0px 0px 0px 0px;
+    width: 75px;
+}
+
+#popup-bing {
+    margin: 0px 0px 0px 0px;
+    width: 53px;
+}
+
+#popup-baidu {
+    margin: 0px 0px 0px 0px;
+    width: 60px;
+}
+
+#popup-6 {
+    margin: 0px 0px 0px 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 30px;
+}
+
+#popup-7 {
+    margin: 0px 0px 0px 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 30px;
+}
+
+#popup-8 {
+    margin: 0px 0px 0px 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+    width: 30px;
+}
+
+#popup-duck {
+    margin: 1px 0px 0px 0px;
+    width: 57px;
+}
+</style>
+</head>
+<body>
+<div id="popup">
+
+<div>
+<nobr><input id="popup-textbox" name="q" type="text" autocomplete="off"><input id="popup-f" type="button" value="Find"></nobr>
+</div>
+<div style="display:none">
+<button id="popup-find">Find</button><button id="popup-entiredomain">in Domain</button><button id="popup-subdomain">in Subdomain</button><button id="popup-cl">in Craigslist</button><button id="popup-stack" title="Find on site Stack Overflow">Stack</button><button id="popup-overflow" title="Find in Stack Overflow by Google">Overflow</button><button id="popup-double">Double Tab</button>
+<br>
+<button id="popup-ali">Ali</button><button id="popup-amazon">Amazon</button><button id="popup-bing">Bing</button><button id="popup-baidu">Baidu</button><button id="popup-duck">Duck</button><button id="popup-6">6</button><button id="popup-7">7</button><button id="popup-8">8</button><button id="popup-gmail">Gmail</button><button id="popup-google">Google</button><button id="popup-youtube">Youtube</button>
+<br>
+<a href="https://aliexpress.com" style="margin-left:3px">AliExpress</a>
+<a target="_blank" href="https://amazon.com">Amazon</a>
+<a target="_blank" href="https://www.ebay.com">Ebay</a>
+<a target="_blank" href="https://www.facebook.com">Facebook</a>
+<a target="_blank" href="https://vk.com">Vk</a>
+<a target="_blank" href="https://mail.aol.com">AolMail</a>
+<a target="_blank" href="https://mail.google.com/mail/u/0/#inbox">Gmail</a>
+<a target="_blank" href="https://e.mail.ru/messages/inbox/">Mail.Ru</a>
+<a target="_blank" href="https://outlook.live.com/owa/">Outlook</a>
+<a target="_blank" href="https://mail.protonmail.com">Pmail</a>
+<a target="_blank" href="https://mail.yahoo.com">Ymail</a>
+<a target="_blank" href="https://mail.yandex.ru">Я</a>
+<a target="_blank" href="http://searchmonster.net" style="color:#484848">Search Monster</a>
+<a target="_blank" href="https://www.youtube.com" style="float:right;margin-right:3px">Youtube</a>
+</div></div>
+</body>
+</html>
